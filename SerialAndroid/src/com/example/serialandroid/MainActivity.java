@@ -49,30 +49,24 @@ public class MainActivity extends Activity {
 
 		Button Button1 = (Button) findViewById(R.id.button1);
 		Button1.setOnClickListener(new OnClickListener() {
-			@Override
 			public void onClick(View v) {
 				try {
 					usb.write("0".getBytes("UTF-8"),1);
 				} catch (UnsupportedEncodingException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 		});
 		Button Button2 = (Button) findViewById(R.id.button2);
 		Button2.setOnClickListener(new OnClickListener() {
-			@Override
 			public void onClick(View v) {
 				try {
 					usb.write("1".getBytes("UTF-8"),1);
 				} catch (UnsupportedEncodingException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -80,22 +74,6 @@ public class MainActivity extends Activity {
 
 
 	}
-
-	private void start_read_thread() {
-		new Thread(new Runnable(){
-			public void run(){
-				try{
-					while(true){
-						usb.write(strings.getBytes("UTF-8"),1);
-					}
-				}
-				catch(IOException e){
-					e.printStackTrace();
-				}
-			}
-		}).start();
-	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
